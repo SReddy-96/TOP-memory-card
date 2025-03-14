@@ -1,6 +1,6 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
+main {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
   padding: 2rem;
-  text-align: center;
+  gap: 1rem;
 }
