@@ -1,0 +1,26 @@
+main {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  padding: 2rem;
+  gap: 1rem;
+  padding-top: 8rem;
+  width: 90%;
+  margin: auto;
+}
+
+.images {
+  aspect-ratio: 1/1;
+  max-width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  overflow: hidden;
+  border: 1px black solid;
+  transition: all 0.2s ease-in-out;
+  animation: 0.3s ease-out 0s 1 fadeIn;
+}
+
+.images:hover {
+  transform: scale(1.08);
+
+}
