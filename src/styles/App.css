@@ -14,3 +14,7 @@ main {
   object-position: 50% 50%;
   overflow: hidden;
 }
+
+h1 {
+  text-align: center;
+}
