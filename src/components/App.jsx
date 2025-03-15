@@ -18,7 +18,7 @@ function App() {
       <main>
         {images.map((image) => {
           return (
-            <div key={image} class="images">
+            <div key={image} className="images">
               <img src={image} alt="dog picture" />
             </div>
           );
