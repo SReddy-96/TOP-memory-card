@@ -1,4 +1,5 @@
 import Loading from "./loading.jsx";
+import Error from "./error.jsx";
 import { useEffect, useState } from "react";
 import "../styles/main.css";
 
@@ -37,7 +38,7 @@ function Main() {
   }
 
   if (error) {
-    return <div>Error: {error.message}</div>;
+    return <Error message={error.message}/>;
   }
   return (
     <main>
