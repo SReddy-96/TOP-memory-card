@@ -14,7 +14,7 @@ function Main() {
 
       try {
         const response = await fetch(
-          "https://dog.ceo/api/breeds/image/random/6"
+          "https://dog.ceo/api/breeds/image/random/4"
         );
         if (!response.ok) {
           throw new Error(`HTTP error! status: ${response.status}`);
@@ -43,9 +43,7 @@ function Main() {
     <main>
       {images.map((image) => {
         return (
-          <div key={image} className="images">
-            <img src={image} alt="dog picture" />
-          </div>
+          <img key={image} className="images" src={image} alt="dog picture" />
         );
       })}
     </main>
