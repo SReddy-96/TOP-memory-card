@@ -1,9 +1,8 @@
 main {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  padding: 2rem;
+  grid-template-columns: repeat(2, 1fr);
+  padding: 8rem 2rem 2rem 2rem;
   gap: 2rem;
-  padding-top: 8rem;
   width: 90%;
   margin: auto;
 }
@@ -16,10 +15,34 @@ main {
   object-position: center;
   overflow: hidden;
   border: 1px black solid;
-  transition: all 0.2s ease-in-out;
-  animation: 0.3s ease-out 0s 1 fadeIn;
+  transition: transform 0.2s ease-in-out;
+  opacity: 0; /* Initial opacity */
+  animation: fadeIn 0.7s ease-out forwards;
+  cursor: pointer;
 }
 
 .images:hover {
   transform: scale(1.08);
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* mobile and tablet*/
+@media (max-width: 1024px) {
+  main {
+    padding: 6rem 1rem 1rem 1rem;
+  }
+}
+
+@media (orientation: landscape) {
+  main {
+    grid-template-columns: repeat(4, 1fr);
+  }
 }

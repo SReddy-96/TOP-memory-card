@@ -3,10 +3,27 @@ import Error from "./error.jsx";
 import { useEffect, useState } from "react";
 import "../styles/main.css";
 
-function Main() {
+function Main({ currentScore, setCurrentScore, highScore, setHighScore }) {
   const [images, setImages] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
+  const [clicked, setClicked] = useState([]);
+
+  const handleClick = (e) => {
+    const imageId = e.target.id;
+    // check to see if the images has been clicked before
+    if (clicked.includes(imageId)) {
+      setCurrentScore(0);
+      setClicked([]);
+    } else {
+      // if new image, set new score and check high score
+      setCurrentScore((prevScore) => prevScore + 1);
+      if (currentScore + 1 >= highScore) {
+        setHighScore(currentScore + 1);
+      }
+      setClicked((prevClicked) => [...prevClicked, imageId]);
+    }
+  };
 
   useEffect(() => {
     const fetchData = async () => {
@@ -31,20 +48,27 @@ function Main() {
     };
 
     fetchData();
-  }, []);
+  }, [clicked]);
 
   if (loading) {
     return <Loading />;
   }
 
   if (error) {
-    return <Error message={error.message}/>;
+    return <Error message={error.message} />;
   }
   return (
     <main>
       {images.map((image) => {
         return (
-          <img key={image} className="images" src={image} alt="dog picture" />
+          <img
+            key={image}
+            className="images"
+            id={image}
+            src={image}
+            alt="dog picture"
+            onClick={handleClick}
+          />
         );
       })}
     </main>
