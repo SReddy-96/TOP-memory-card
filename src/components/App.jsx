@@ -17,8 +17,10 @@ function App() {
         currentScore={currentScore}
         setCurrentScore={setCurrentScore}
       />
-      <CurrentScoreShow currentScore={currentScore} />
-      <HighScoreShow highScore={highScore} />
+      <div id="scoreWrapper">
+        <CurrentScoreShow currentScore={currentScore} />
+        <HighScoreShow highScore={highScore} />
+      </div>
     </>
   );
 }

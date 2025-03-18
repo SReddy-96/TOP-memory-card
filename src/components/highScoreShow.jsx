@@ -1,4 +1,4 @@
 function HighScoreShow({ highScore }) {
-  return <p>{highScore}</p>;
+  return <p>High Score:{highScore}</p>;
 }
 export default HighScoreShow;

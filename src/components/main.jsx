@@ -48,7 +48,7 @@ function Main({ currentScore, setCurrentScore, highScore, setHighScore }) {
         // use timeout to create a constant time loading
         setTimeout(() => {
           setLoading(false);
-        }, 1500);
+        }, 500);
       }
     };
 
