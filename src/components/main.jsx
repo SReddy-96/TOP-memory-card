@@ -43,7 +43,10 @@ function Main({ currentScore, setCurrentScore, highScore, setHighScore }) {
         setError(e);
         console.error("Error fetching dog images:", e);
       } finally {
-        setLoading(false);
+        // use timeout to create a constant time loading
+        setTimeout(() => {
+          setLoading(false);
+        }, 1500);
       }
     };
 

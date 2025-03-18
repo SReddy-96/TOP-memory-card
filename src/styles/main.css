@@ -14,11 +14,12 @@ main {
   object-fit: cover;
   object-position: center;
   overflow: hidden;
-  border: 1px black solid;
+   border: 1px rgba(0, 0, 0, 0.200) solid; 
   transition: transform 0.2s ease-in-out;
   opacity: 0; /* Initial opacity */
-  animation: fadeIn 0.7s ease-out forwards;
+  animation: fadeIn 1s ease-out forwards;
   cursor: pointer;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
 }
 
 .images:hover {
@@ -26,18 +27,11 @@ main {
 }
 
 @keyframes fadeIn {
-  from {
+  0% {
     opacity: 0;
   }
-  to {
+  100% {
     opacity: 1;
-  }
-}
-
-/* mobile and tablet*/
-@media (max-width: 1024px) {
-  main {
-    padding: 6rem 1rem 1rem 1rem;
   }
 }
 
