@@ -17,3 +17,4 @@ I need a `handleclick` function that will be attached to the image that will fir
 Also, need to keep track of the high score when the image is click, so another if statement to see if the current score is greater than the high score. 
 Should have a little instructional pop up 
 Can also do mobile version as 2x2 grid
+Should say when the user has losts, showing a screen when the ID is found 

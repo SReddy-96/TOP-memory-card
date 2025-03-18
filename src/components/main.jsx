@@ -1,5 +1,6 @@
 import Loading from "./loading.jsx";
 import Error from "./error.jsx";
+import Lost from "./lost.jsx";
 import { useEffect, useState } from "react";
 import "../styles/main.css";
 
@@ -15,6 +16,7 @@ function Main({ currentScore, setCurrentScore, highScore, setHighScore }) {
     if (clicked.includes(imageId)) {
       setCurrentScore(0);
       setClicked([]);
+      return <Lost />;
     } else {
       // if new image, set new score and check high score
       setCurrentScore((prevScore) => prevScore + 1);
