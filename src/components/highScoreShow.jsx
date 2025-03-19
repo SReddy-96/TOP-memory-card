@@ -1,4 +1,6 @@
+import "../styles/scoreStyling.css";
+
 function HighScoreShow({ highScore }) {
-  return <p>High Score:{highScore}</p>;
+  return <p className="score">High Score: {highScore}</p>;
 }
 export default HighScoreShow;

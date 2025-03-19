@@ -1,10 +1,4 @@
 h1 {
   text-align: center;
-}
-
-#header {
-  position:absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
+  color: #177245;
 }

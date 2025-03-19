@@ -9,7 +9,7 @@ function App() {
   const [currentScore, setCurrentScore] = useState(0);
   const [highScore, setHighScore] = useState(0);
   return (
-    <>
+    <div id="layout">
       <Header />
       <Main
         highScore={highScore}
@@ -21,7 +21,7 @@ function App() {
         <CurrentScoreShow currentScore={currentScore} />
         <HighScoreShow highScore={highScore} />
       </div>
-    </>
+    </div>
   );
 }
 
