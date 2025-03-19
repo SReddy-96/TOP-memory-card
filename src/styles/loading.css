@@ -1,7 +1,17 @@
-h1 {
-  text-align: center;
+#loading {
+  justify-self: center;
+  align-self: center;
+  width: 50px;
+  height: 50px;
+  border: 5px solid rgba(189, 189, 189, 0.25);
+  border-left-color: #177245;
+  border-top-color: #177245;
+  border-radius: 50%;
+  animation: rotate 600ms infinite linear;
 }
 
-#loading {
-  width: 100vw;
+@keyframes rotate {
+  to {
+    transform: rotate(1turn);
+  }
 }

@@ -16,7 +16,7 @@ function Main({ currentScore, setCurrentScore, highScore, setHighScore }) {
     if (clicked.includes(imageId)) {
       setCurrentScore(0);
       setClicked([]);
-      return <Lost />;
+      <Lost />;
     } else {
       // if new image, set new score and check high score
       setCurrentScore((prevScore) => prevScore + 1);
