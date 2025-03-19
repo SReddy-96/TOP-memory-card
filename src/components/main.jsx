@@ -9,14 +9,13 @@ function Main({ currentScore, setCurrentScore, highScore, setHighScore }) {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const [clicked, setClicked] = useState([]);
+  const [isLost, setIsLost] = useState(false);
 
   const handleClick = (e) => {
     const imageId = e.target.id;
     // check to see if the images has been clicked before
     if (clicked.includes(imageId)) {
-      setCurrentScore(0);
-      setClicked([]);
-      <Lost />;
+      setIsLost(true);
     } else {
       // if new image, set new score and check high score
       setCurrentScore((prevScore) => prevScore + 1);
@@ -25,6 +24,13 @@ function Main({ currentScore, setCurrentScore, highScore, setHighScore }) {
       }
       setClicked((prevClicked) => [...prevClicked, imageId]);
     }
+  };
+
+  // reset all states when game is reset
+  const resetGame = () => {
+    setIsLost(false);
+    setCurrentScore(0);
+    setClicked([]);
   };
 
   useEffect(() => {
@@ -62,20 +68,27 @@ function Main({ currentScore, setCurrentScore, highScore, setHighScore }) {
   if (error) {
     return <Error message={error.message} />;
   }
+
   return (
     <main>
-      {images.map((image) => {
-        return (
-          <img
-            key={image}
-            className="images"
-            id={image}
-            src={image}
-            alt="dog picture"
-            onClick={handleClick}
-          />
-        );
-      })}
+
+      {/* use a ternary operator to display the main */}
+      {isLost ? (
+        <Lost resetGame={resetGame} />
+      ) : (
+        images.map((image) => {
+          return (
+            <img
+              key={image}
+              className="images"
+              id={image}
+              src={image}
+              alt="dog picture"
+              onClick={handleClick}
+            />
+          );
+        })
+      )}
     </main>
   );
 }
