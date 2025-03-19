@@ -1,4 +1,59 @@
+#header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 h1 {
   text-align: center;
   color: #177245;
+}
+
+.help-container {
+  position: relative; 
+  display: inline-block; 
+  padding-left: 1rem;
+}
+
+.help-icon {
+  cursor: pointer;
+  font-size: 1.5em;
+  border: 1px solid #177245;
+  border-radius: 50%;
+  width: 25px;
+  height: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.help-tooltip {
+  position: absolute;
+  background-color: #f9f9f9;
+  border: 1px solid #177245;
+  padding: 10px;
+  border-radius: 5px;
+  width: 200px;
+  top: 120%; /* Position below the icon */
+  left: 50%;
+  transform: translateX(-50%); 
+  visibility: hidden; /* Initially hidden */
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+  z-index: 10;
+}
+
+.help-container:hover .help-tooltip {
+  visibility: visible;
+  opacity: 1;
+}
+
+@media (orientation: portrait) {
+  #header {
+    flex-direction: column;
+  }
+  .help-icon {
+    margin: -2rem 0 1rem 0 
+    
+  }
 }
